@@ -1,0 +1,26 @@
+|topLevel
+sel[0] => Mux0.IN10
+sel[1] => Mux0.IN9
+sel[2] => Mux0.IN8
+x0 => out1.IN0
+x0 => out1.IN0
+x0 => out1.IN0
+x0 => out1.IN0
+x0 => out1.IN0
+x0 => out1.IN0
+y0 => out1.IN1
+y0 => out1.IN0
+y0 => out1.IN1
+y0 => out1.IN1
+y0 => out1.IN1
+z0 => out1.IN1
+z0 => out1.IN1
+z0 => out1.IN1
+z0 => out1.IN1
+z0 => out1.IN1
+w0 => out1.IN1
+w0 => out1.IN1
+out1 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+out2 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

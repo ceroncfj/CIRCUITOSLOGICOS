@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/ceron/OneDrive/Escritorio/Nueva carpeta/topLevel.vhd
+source_file = 1, C:/Users/ceron/OneDrive/Escritorio/Nueva carpeta/db/topLevel.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = topLevel
+instance = comp, \out1~output\, out1~output, topLevel, 1
+instance = comp, \out2~output\, out2~output, topLevel, 1
+instance = comp, \sel[0]~input\, sel[0]~input, topLevel, 1
+instance = comp, \sel[1]~input\, sel[1]~input, topLevel, 1
+instance = comp, \sel[2]~input\, sel[2]~input, topLevel, 1
+instance = comp, \x0~input\, x0~input, topLevel, 1
+instance = comp, \y0~input\, y0~input, topLevel, 1
+instance = comp, \z0~input\, z0~input, topLevel, 1
+instance = comp, \w0~input\, w0~input, topLevel, 1
