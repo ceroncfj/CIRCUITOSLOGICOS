@@ -1,5 +1,5 @@
 Analysis & Synthesis report for topLevel
-Wed Oct 12 01:04:49 2022
+Wed Oct 12 16:56:15 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,11 +13,9 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Elapsed Time Per Partition
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +41,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 12 01:04:49 2022      ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 12 16:56:15 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; topLevel                                   ;
 ; Top-level Entity Name              ; topLevel                                   ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 18                                         ;
-;     Total combinational functions  ; 18                                         ;
+; Total logic elements               ; 33                                         ;
+;     Total combinational functions  ; 33                                         ;
 ;     Dedicated logic registers      ; 0                                          ;
 ; Total registers                    ; 0                                          ;
-; Total pins                         ; 20                                         ;
+; Total pins                         ; 19                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -147,31 +145,24 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; topLevel.vhd                     ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica1/topLevel.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; topLevel.vhd                     ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica1/topLevel.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------+
@@ -179,28 +170,28 @@ applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 18            ;
+; Estimated Total logic elements              ; 33            ;
 ;                                             ;               ;
-; Total combinational functions               ; 18            ;
+; Total combinational functions               ; 33            ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 9             ;
-;     -- 3 input functions                    ; 9             ;
-;     -- <=2 input functions                  ; 0             ;
+;     -- 4 input functions                    ; 22            ;
+;     -- 3 input functions                    ; 6             ;
+;     -- <=2 input functions                  ; 5             ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 18            ;
+;     -- normal mode                          ; 33            ;
 ;     -- arithmetic mode                      ; 0             ;
 ;                                             ;               ;
 ; Total registers                             ; 0             ;
 ;     -- Dedicated logic registers            ; 0             ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
-; I/O pins                                    ; 20            ;
+; I/O pins                                    ; 19            ;
 ; Embedded Multiplier 9-bit elements          ; 0             ;
-; Maximum fan-out node                        ; mode[2]~input ;
-; Maximum fan-out                             ; 8             ;
-; Total fan-out                               ; 89            ;
-; Average fan-out                             ; 1.53          ;
+; Maximum fan-out node                        ; mode[1]~input ;
+; Maximum fan-out                             ; 14            ;
+; Total fan-out                               ; 141           ;
+; Average fan-out                             ; 1.99          ;
 +---------------------------------------------+---------------+
 
 
@@ -209,23 +200,9 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |topLevel                  ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |topLevel           ; work         ;
+; |topLevel                  ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |topLevel           ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; outx[2]$latch                                      ; Mux0                ; yes                    ;
-; outx[3]$latch                                      ; Mux0                ; yes                    ;
-; outx[4]$latch                                      ; Mux0                ; yes                    ;
-; outx[5]$latch                                      ; Mux0                ; yes                    ;
-; Number of user-specified and inferred latches = 4  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -243,21 +220,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |topLevel|Mux2             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -267,61 +235,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Oct 12 01:04:47 2022
+    Info: Processing started: Wed Oct 12 16:56:10 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off topLevel -c topLevel
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
     Info (12022): Found design unit 1: topLevel-practica
     Info (12023): Found entity 1: topLevel
 Info (12127): Elaborating entity "topLevel" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(20): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(21): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(24): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(25): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(28): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(29): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(32): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(33): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(36): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(37): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(39): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(40): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(43): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(44): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(45): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(48): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(49): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at topLevel.vhd(52): signal "inx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at topLevel.vhd(15): inferring latch(es) for signal or variable "outx", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "outx[2]" at topLevel.vhd(15)
-Info (10041): Inferred latch for "outx[3]" at topLevel.vhd(15)
-Info (10041): Inferred latch for "outx[4]" at topLevel.vhd(15)
-Info (10041): Inferred latch for "outx[5]" at topLevel.vhd(15)
-Warning (13012): Latch outx[2]$latch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mode[2]
-Warning (13012): Latch outx[3]$latch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mode[2]
-Warning (13012): Latch outx[4]$latch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mode[3]
-Warning (13012): Latch outx[5]$latch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mode[3]
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "light" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "inx[6]"
-    Warning (15610): No output dependent on input pin "inx[7]"
-    Warning (15610): No output dependent on input pin "inx[8]"
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 18 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 4664 megabytes
-    Info: Processing ended: Wed Oct 12 01:04:49 2022
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 33 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4646 megabytes
+    Info: Processing ended: Wed Oct 12 16:56:15 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 

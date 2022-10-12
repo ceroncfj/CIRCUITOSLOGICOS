@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica1/output_files/test.vhd
+source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica1/output_files/db/test.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = test
+instance = comp, \o[0]~output\, o[0]~output, test, 1
+instance = comp, \o[1]~output\, o[1]~output, test, 1
+instance = comp, \o[2]~output\, o[2]~output, test, 1
+instance = comp, \o[3]~output\, o[3]~output, test, 1
+instance = comp, \o[4]~output\, o[4]~output, test, 1
+instance = comp, \o[5]~output\, o[5]~output, test, 1
+instance = comp, \s~input\, s~input, test, 1
