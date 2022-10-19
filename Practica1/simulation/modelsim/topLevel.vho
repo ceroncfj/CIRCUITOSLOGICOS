@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "10/12/2022 16:56:41"
+-- DATE "10/16/2022 17:19:40"
 
 -- 
 -- Device: Altera EP4CE6E22C8L Package TQFP144
@@ -35,7 +35,7 @@ ENTITY 	topLevel IS
     PORT (
 	mode : IN std_logic_vector(3 DOWNTO 0);
 	inx : IN std_logic_vector(8 DOWNTO 0);
-	outx : OUT std_logic_vector(5 DOWNTO 0)
+	outx : BUFFER std_logic_vector(5 DOWNTO 0)
 	);
 END topLevel;
 

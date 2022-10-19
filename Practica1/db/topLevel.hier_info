@@ -87,11 +87,11 @@ inx[7] => outx.IN1
 inx[7] => outx.IN1
 inx[7] => outx.IN1
 inx[8] => outx.IN1
-outx[0] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
-outx[1] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
-outx[2] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-outx[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-outx[4] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-outx[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+outx[0] << Mux5.DB_MAX_OUTPUT_PORT_TYPE
+outx[1] << Mux4.DB_MAX_OUTPUT_PORT_TYPE
+outx[2] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+outx[3] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+outx[4] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+outx[5] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
