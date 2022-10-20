@@ -1,6 +1,6 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica1/topLevel.vhd
-source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica1/db/topLevel.cbx.xml
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica1/topLevel.vhd
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica1/db/topLevel.cbx.xml
 source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
