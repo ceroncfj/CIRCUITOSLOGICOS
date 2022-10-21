@@ -9,7 +9,7 @@ entity practica2 is port(
 end practica2;
 
 architecture behavior of practica2 is
-	signal red,green: std_logic;
+	signal green: std_logic;
 begin
 	process(inx,mode)
 	begin
@@ -35,20 +35,20 @@ begin
 			outx(1)<='0';	outx(2)<='0';	outx(3)<='0';
 			
 		when "1100"=> --Ejercicio 3 (norteños)
-		outx(0)<= not(		( inx(0) and  inx(1) and  not  inx(2) and  inx(3)) 
-							or ( inx(0) and  not  inx(1) and  inx(2) and  not  inx(3) and  inx(4)) or 
-							( inx(0) and  inx(3) and  not  inx(4)) or 
-							( not  inx(0) and  inx(1) and  inx(2) and  inx(3)) or 
-							( not  inx(0) and  not  inx(1) and  not  inx(2) and  not  inx(3) and  not  inx(4)) or 
-							( inx(1) and  not  inx(2) and  not  inx(3) and  inx(4)) or 
-							( inx(1) and  inx(3) and  not  inx(4)) or 
-							( inx(2) and  inx(3) and  not  inx(4)) );
+		outx(0)<= 	(not inx(0) and not inx(1) and inx(2) and not inx(4)) or
+						(not inx(1) and inx(2) and inx(3) and not inx(4)) or
+						(inx(0) and inx(1) and inx(3) and inx(4)) or
+						(not inx(0) and not inx(1) and inx(3)) or
+						(not inx(0) and inx(2) and inx(3)) or
+						(not inx(2) and not inx(3) and inx(4)) or
+						(inx(1) and not inx(2) and not inx(4)) or
+						(inx(0) and not  inx(2) and not inx(3));
 		outx(1)<='0';	outx(2)<='0';	outx(3)<='0';
 		
 		when "1000"=> --Ejercicio 4 (BCD)
-		outx(0)<=(not inx(2) and not inx(3)) or 
-					(not inx(1) and not inx(3)) or 
-					(not inx(0) and not inx(1) and  not inx(2));
+		outx(0)<=	(not inx(1) and inx(3) and inx(4))or
+						(inx(1) and inx(2) and not inx(3))or
+						(not inx(3) or not inx(4));
 					
 		outx(1)<='0';	outx(2)<='0';	outx(3)<='0';
 		when "0000"=> --Ejercicio 5 (DETECTOR POTENCIAS DE 2)
