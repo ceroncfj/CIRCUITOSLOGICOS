@@ -1,0 +1,28 @@
+|practica3
+sel[0] => ~NO_FANOUT~
+sel[1] => ~NO_FANOUT~
+ix1[0] => ~NO_FANOUT~
+ix1[1] => ~NO_FANOUT~
+ix1[2] => ~NO_FANOUT~
+ix1[3] => ~NO_FANOUT~
+ix2[0] => ~NO_FANOUT~
+ix2[1] => ~NO_FANOUT~
+ix2[2] => ~NO_FANOUT~
+ix2[3] => ~NO_FANOUT~
+ox[0] <= ox[0].DB_MAX_OUTPUT_PORT_TYPE
+ox[1] <= ox[1].DB_MAX_OUTPUT_PORT_TYPE
+ox[2] <= ox[2].DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= seg[0].DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg[1].DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg[2].DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg[3].DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg[4].DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg[5].DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg[6].DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= seg[7].DB_MAX_OUTPUT_PORT_TYPE
+dig[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dig[1] <= dig[1].DB_MAX_OUTPUT_PORT_TYPE
+dig[2] <= dig[2].DB_MAX_OUTPUT_PORT_TYPE
+dig[3] <= dig[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
