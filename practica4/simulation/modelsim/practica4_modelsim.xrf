@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/practica4/practica4.vhd
+source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/practica4/db/practica4.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = practica4
+instance = comp, \C[0]~output\, C[0]~output, practica4, 1
+instance = comp, \C[1]~output\, C[1]~output, practica4, 1
+instance = comp, \C[2]~output\, C[2]~output, practica4, 1
+instance = comp, \A[0]~input\, A[0]~input, practica4, 1
+instance = comp, \A[1]~input\, A[1]~input, practica4, 1
+instance = comp, \A[2]~input\, A[2]~input, practica4, 1
+instance = comp, \B[0]~input\, B[0]~input, practica4, 1
+instance = comp, \B[1]~input\, B[1]~input, practica4, 1
+instance = comp, \B[2]~input\, B[2]~input, practica4, 1

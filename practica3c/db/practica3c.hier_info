@@ -1,0 +1,65 @@
+|practica3c
+ea => demux:u1.e
+eb => demux:u2.e
+ha => demux:u1.h
+hb => demux:u2.h
+sel[0] => demux:u1.sel[0]
+sel[0] => demux:u2.sel[0]
+sel[1] => demux:u1.sel[1]
+sel[1] => demux:u2.sel[1]
+sala[0] <= demux:u1.sal[0]
+sala[1] <= demux:u1.sal[1]
+sala[2] <= demux:u1.sal[2]
+sala[3] <= demux:u1.sal[3]
+salb[0] <= demux:u2.sal[0]
+salb[1] <= demux:u2.sal[1]
+salb[2] <= demux:u2.sal[2]
+salb[3] <= demux:u2.sal[3]
+
+
+|practica3c|demux:u1
+sel[0] => Mux0.IN4
+sel[0] => Mux1.IN4
+sel[0] => Mux2.IN4
+sel[0] => Mux3.IN4
+sel[1] => Mux0.IN3
+sel[1] => Mux1.IN3
+sel[1] => Mux2.IN3
+sel[1] => Mux3.IN3
+e => Mux0.IN5
+e => Mux1.IN5
+e => Mux2.IN5
+e => Mux3.IN5
+h => sal.OUTPUTSELECT
+h => sal.OUTPUTSELECT
+h => sal.OUTPUTSELECT
+h => sal.OUTPUTSELECT
+sal[0] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[1] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[2] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[3] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica3c|demux:u2
+sel[0] => Mux0.IN4
+sel[0] => Mux1.IN4
+sel[0] => Mux2.IN4
+sel[0] => Mux3.IN4
+sel[1] => Mux0.IN3
+sel[1] => Mux1.IN3
+sel[1] => Mux2.IN3
+sel[1] => Mux3.IN3
+e => Mux0.IN5
+e => Mux1.IN5
+e => Mux2.IN5
+e => Mux3.IN5
+h => sal.OUTPUTSELECT
+h => sal.OUTPUTSELECT
+h => sal.OUTPUTSELECT
+h => sal.OUTPUTSELECT
+sal[0] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[1] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[2] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[3] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+
+
