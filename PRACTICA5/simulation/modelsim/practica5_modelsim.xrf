@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/db/practica5.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = practica5
+instance = comp, \outx[0]~output\, outx[0]~output, practica5, 1
+instance = comp, \outx[1]~output\, outx[1]~output, practica5, 1
+instance = comp, \outx[2]~output\, outx[2]~output, practica5, 1
+instance = comp, \outx[3]~output\, outx[3]~output, practica5, 1
+instance = comp, \outx[4]~output\, outx[4]~output, practica5, 1
+instance = comp, \outx[5]~output\, outx[5]~output, practica5, 1
+instance = comp, \outx[6]~output\, outx[6]~output, practica5, 1
+instance = comp, \outx[7]~output\, outx[7]~output, practica5, 1
+instance = comp, \clk~input\, clk~input, practica5, 1

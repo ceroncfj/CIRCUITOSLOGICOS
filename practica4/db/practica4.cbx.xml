@@ -1,5 +1,8 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="practica4">
+		<CBX_INST_ENTRY INSTANCE_NAME="|practica4|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_7ui.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|practica4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_ibh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|practica4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_jbh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
