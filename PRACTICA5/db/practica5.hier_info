@@ -1,0 +1,12 @@
+|practica5
+clk => ~NO_FANOUT~
+outx[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+outx[1] <= outx[1].DB_MAX_OUTPUT_PORT_TYPE
+outx[2] <= outx[2].DB_MAX_OUTPUT_PORT_TYPE
+outx[3] <= outx[3].DB_MAX_OUTPUT_PORT_TYPE
+outx[4] <= outx[4].DB_MAX_OUTPUT_PORT_TYPE
+outx[5] <= outx[5].DB_MAX_OUTPUT_PORT_TYPE
+outx[6] <= outx[6].DB_MAX_OUTPUT_PORT_TYPE
+outx[7] <= outx[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

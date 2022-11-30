@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Oct 22 20:12:30 2022
+# Process ID: 11312
+# Current directory: C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/VIVADO/circuito_combinatorio/circuito_combinatorio.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/VIVADO/circuito_combinatorio/circuito_combinatorio.sim/sim_1/behav/xsim/xsim.dir/circuitoCombinatorio_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/VIVADO/circuito_combinatorio/circuito_combinatorio.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/VIVADO/circuito_combinatorio/circuito_combinatorio.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/VIVADO/circuito_combinatorio/circuito_combinatorio.sim/sim_1/behav/xsim/xsim.dir/circuitoCombinatorio_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Oct 22 20:12:30 2022...
