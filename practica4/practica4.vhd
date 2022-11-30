@@ -18,36 +18,35 @@ end practica4;
 architecture topLevel of practica4 is
 	signal result: std_logic_vector(5 downto 0);
 	signal sumres: std_logic_vector(2 downto 0);
-	signal temporal: std_logic_vector(3 downto 0);
+	signal indeco: std_logic_vector(3 downto 0);
 	component decoder is port(	inx: in std_logic_vector(3 downto 0);seg: out std_logic_vector(7 downto 0));
 end component;
 begin
 	process(A,B,mode,sel) begin
-		if(mode='1') then -- SUMADOR/RESTADOR
+		if(mode='1') then -- **********SUMADOR/RESTADOR
 			case(sel) is
-				when "000" =>
+				when "111" =>
 					sumres<= (A+B);
 					
-				when "001" =>
+				when "110" =>
 					sumres<= (A-B);
 					when others =>
 					sumres<="000";
 			end case;
-		else -- ALU
+		else -- ***************************ALU
 			case(sel) is
-				when "000"=>
-					C<= A;
-				when "001"=>
-					C<= A AND B;
-				when "010"=>
-					C<= A OR B;
-				when "011"=>
-					C<= NOT A;
-				when "100"=>
-					C<= A + B;
-				when "101"=>
-					C<= NOT B;
+				when "111"=> C<= A;
 				when "110"=>
+					C<= A AND B;
+				when "101"=>
+					C<= A OR B;
+				when "100"=>
+					C<= NOT A;
+				when "011"=>
+					C<= A + B;
+				when "010"=>
+					C<= NOT B;
+				when "001"=>
 					C<= A-B;
 				when others =>
 					result<= std_logic_vector(unsigned(A) * unsigned(B));
@@ -55,8 +54,8 @@ begin
 			end case;
 		end if;
 	end process;
-	temporal<= '0'& sumres;
-	u1:	decoder port map(inx=>temporal,seg=>seg);
+	indeco<= '0'& sumres;
+	u1:	decoder port map(inx=>indeco,seg=>seg);
 end topLevel;
 
 --*********************DECODER***************
