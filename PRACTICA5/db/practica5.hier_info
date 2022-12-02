@@ -1,12 +1,29 @@
 |practica5
-clk => ~NO_FANOUT~
-outx[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-outx[1] <= outx[1].DB_MAX_OUTPUT_PORT_TYPE
-outx[2] <= outx[2].DB_MAX_OUTPUT_PORT_TYPE
-outx[3] <= outx[3].DB_MAX_OUTPUT_PORT_TYPE
-outx[4] <= outx[4].DB_MAX_OUTPUT_PORT_TYPE
-outx[5] <= outx[5].DB_MAX_OUTPUT_PORT_TYPE
-outx[6] <= outx[6].DB_MAX_OUTPUT_PORT_TYPE
-outx[7] <= outx[7].DB_MAX_OUTPUT_PORT_TYPE
+clk50M => clk~reg0.CLK
+clk50M => contador[0].CLK
+clk50M => contador[1].CLK
+clk50M => contador[2].CLK
+clk50M => contador[3].CLK
+clk50M => contador[4].CLK
+clk50M => contador[5].CLK
+clk50M => contador[6].CLK
+clk50M => contador[7].CLK
+clk50M => contador[8].CLK
+clk50M => contador[9].CLK
+clk50M => contador[10].CLK
+clk50M => contador[11].CLK
+clk50M => contador[12].CLK
+clk50M => contador[13].CLK
+clk50M => contador[14].CLK
+clk50M => contador[15].CLK
+clk50M => contador[16].CLK
+clk50M => contador[17].CLK
+clk50M => contador[18].CLK
+clk50M => contador[19].CLK
+clk50M => contador[20].CLK
+clk50M => contador[21].CLK
+clk50M => contador[22].CLK
+clk50M => contador[23].CLK
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
