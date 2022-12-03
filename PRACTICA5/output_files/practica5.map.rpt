@@ -1,5 +1,5 @@
 Analysis & Synthesis report for practica5
-Thu Dec 01 11:11:06 2022
+Fri Dec 02 19:49:45 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -14,7 +14,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+  9. Port Connectivity Checks: "clkdiv:u1"
  10. Elapsed Time Per Partition
  11. Analysis & Synthesis Messages
 
@@ -42,16 +42,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 01 11:11:06 2022      ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 02 19:49:45 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; practica5                                  ;
 ; Top-level Entity Name              ; practica5                                  ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 49                                         ;
-;     Total combinational functions  ; 49                                         ;
-;     Dedicated logic registers      ; 25                                         ;
-; Total registers                    ; 25                                         ;
-; Total pins                         ; 2                                          ;
+; Total logic elements               ; 0                                          ;
+;     Total combinational functions  ; 0                                          ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 13                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -149,31 +149,24 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; practica5.vhd                    ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; practica5.vhd                    ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -181,12 +174,12 @@ applicable agreement for further details.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 2                ;
+; I/O pins                 ; 13               ;
 ; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; clk50M~input     ;
-; Maximum fan-out          ; 25               ;
-; Total fan-out            ; 199              ;
-; Average fan-out          ; 2.55             ;
+; Maximum fan-out node     ; clk50M           ;
+; Maximum fan-out          ; 1                ;
+; Total fan-out            ; 13               ;
+; Average fan-out          ; 0.50             ;
 +--------------------------+------------------+
 
 
@@ -195,7 +188,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |practica5                 ; 49 (49)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |practica5          ; work         ;
+; |practica5                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 13   ; 0            ; |practica5          ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -205,7 +198,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -215,13 +208,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |practica5|contador[0]     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clkdiv:u1"                                                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; clkout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -239,24 +232,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Dec 01 11:11:03 2022
+    Info: Processing started: Fri Dec 02 19:49:40 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off practica5 -c practica5
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file practica5.vhd
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 4 design units, including 2 entities, in source file practica5.vhd
     Info (12022): Found design unit 1: practica5-topLevel
+    Info (12022): Found design unit 2: clkdiv-behavior
     Info (12023): Found entity 1: practica5
+    Info (12023): Found entity 2: clkdiv
 Info (12127): Elaborating entity "practica5" for the top level hierarchy
-Info (286030): Timing-Driven Synthesis is running
+Warning (10541): VHDL Signal Declaration warning at practica5.vhd(10): used implicit default value for signal "bout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "clkdiv" for hierarchy "clkdiv:u1"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "bout[0]" is stuck at GND
+    Warning (13410): Pin "bout[1]" is stuck at GND
+    Warning (13410): Pin "bout[2]" is stuck at GND
+    Warning (13410): Pin "bout[3]" is stuck at GND
+    Warning (13410): Pin "bout[4]" is stuck at GND
+    Warning (13410): Pin "bout[5]" is stuck at GND
+    Warning (13410): Pin "bout[6]" is stuck at GND
+    Warning (13410): Pin "bout[7]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 49 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4747 megabytes
-    Info: Processing ended: Thu Dec 01 11:11:06 2022
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk50M"
+    Warning (15610): No output dependent on input pin "mode[0]"
+    Warning (15610): No output dependent on input pin "mode[1]"
+    Warning (15610): No output dependent on input pin "mode[2]"
+    Warning (15610): No output dependent on input pin "mode[3]"
+Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 8 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4721 megabytes
+    Info: Processing ended: Fri Dec 02 19:49:45 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 

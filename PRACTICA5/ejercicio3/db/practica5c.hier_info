@@ -1,0 +1,41 @@
+|practica5c
+clk50M => clkdiv:u1.clk50M
+bout[0] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+bout[1] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+bout[2] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+bout[3] << contador[2].DB_MAX_OUTPUT_PORT_TYPE
+bout[4] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+start => contador[0].PRESET
+start => contador[1].PRESET
+start => contador[2].PRESET
+
+
+|practica5c|clkdiv:u1
+clk50M => clkout~reg0.CLK
+clk50M => contador[0].CLK
+clk50M => contador[1].CLK
+clk50M => contador[2].CLK
+clk50M => contador[3].CLK
+clk50M => contador[4].CLK
+clk50M => contador[5].CLK
+clk50M => contador[6].CLK
+clk50M => contador[7].CLK
+clk50M => contador[8].CLK
+clk50M => contador[9].CLK
+clk50M => contador[10].CLK
+clk50M => contador[11].CLK
+clk50M => contador[12].CLK
+clk50M => contador[13].CLK
+clk50M => contador[14].CLK
+clk50M => contador[15].CLK
+clk50M => contador[16].CLK
+clk50M => contador[17].CLK
+clk50M => contador[18].CLK
+clk50M => contador[19].CLK
+clk50M => contador[20].CLK
+clk50M => contador[21].CLK
+clk50M => contador[22].CLK
+clk50M => contador[23].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

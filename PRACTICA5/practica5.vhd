@@ -1,4 +1,4 @@
--- Práctica 5 señales 
+-- Práctica 5 señales ejercicio 1
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -7,31 +7,57 @@ use ieee.std_logic_arith.all;
 
 entity practica5 is port(
 	clk50M: in std_logic;
-	clk: out std_logic
+	bout: out std_logic_vector(7 downto 0);-- Para los led de salida
+	mode: in std_logic_vector(3 downto 0) -- selector de ejercicio de práctica
 );
 end practica5;
 
 architecture topLevel of practica5 is
-	signal contador: std_logic_vector(23 downto 0):=x"000000";
+	component clkdiv is port(clk50M: in std_logic;clkout: out std_logic); end component;
+	signal clkinterno: std_logic;
+	signal contador: std_logic_vector(7 downto 0):=x"00";
 begin
-	process(clk50M) begin
-	 if (rising_edge(clk50M)) then 
-		contador<=contador + 1;
-		if (contador<x"002625A0")then
-			clk<= '1';
-		elsif(contador=x"004C4B40") then
-			contador<= x"000000";
-		else
-			clk<= '0';
-		end if;
-	 end if;
+	u1: clkdiv port map (clk50M=>clk50M, clkout=>clkinterno);
+	process(clkinterno) begin
+			if (rising_edge(clkinterno)) then contador<=contador + 1; end if;
 	end process;
 end topLevel;
 
 
--- Práctica 5 señales 
+--**************************DIVISOR DE RELOJ*******************
+--** Por default configurado a 10HZ salida
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
+
+entity clkdiv is port(
+	clk50M: in std_logic;-- Ajustar dependiendo del reloj de la fpga
+	clkout: out std_logic -- sólo si queremos que el reloj sea nuestra salida
+);
+end clkdiv;
+
+architecture behavior of clkdiv is
+	signal contador: std_logic_vector(23 downto 0):=x"000000"; -- los 24 bits nos permiten almacenar todos los pulsos generados en un segundo
+begin
+	process(clk50M) begin
+	 if (rising_edge(clk50M)) then 
+		contador<=contador + 1;
+		if (contador<2500000)then -- 2.5 MHz es x"002625A0"
+			clkout<= '1';
+		elsif(contador=5000000) then-- 5MHz en hexadecimal para el divisor --x"004C4B40"
+			contador<= x"000000"; -- reset a contador
+		else
+			clkout<= '0';
+		end if;
+	 end if;
+	end process;
+end behavior;
+
+
+
+
+
+
+
