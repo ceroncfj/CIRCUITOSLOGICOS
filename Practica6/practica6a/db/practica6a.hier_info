@@ -1,0 +1,80 @@
+|practica6a
+CLOCK => clkdiv:clk.clk50M
+A => SR_FF:sr.S
+A => JK_FF:jk.J
+A => T_FF:t.T
+A => D_FF:d.D
+B => SR_FF:sr.R
+B => JK_FF:jk.K
+Q[0] << SR_FF:sr.Q
+Q[1] << JK_FF:jk.Q
+Q[2] << T_FF:t.Q
+Q[3] << D_FF:d.Q
+
+
+|practica6a|clkdiv:clk
+clk50M => clkout~reg0.CLK
+clk50M => contador[0].CLK
+clk50M => contador[1].CLK
+clk50M => contador[2].CLK
+clk50M => contador[3].CLK
+clk50M => contador[4].CLK
+clk50M => contador[5].CLK
+clk50M => contador[6].CLK
+clk50M => contador[7].CLK
+clk50M => contador[8].CLK
+clk50M => contador[9].CLK
+clk50M => contador[10].CLK
+clk50M => contador[11].CLK
+clk50M => contador[12].CLK
+clk50M => contador[13].CLK
+clk50M => contador[14].CLK
+clk50M => contador[15].CLK
+clk50M => contador[16].CLK
+clk50M => contador[17].CLK
+clk50M => contador[18].CLK
+clk50M => contador[19].CLK
+clk50M => contador[20].CLK
+clk50M => contador[21].CLK
+clk50M => contador[22].CLK
+clk50M => contador[23].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6a|SR_FF:sr
+S => process_0.IN0
+S => process_0.IN0
+S => process_0.IN0
+R => process_0.IN1
+R => process_0.IN1
+R => process_0.IN1
+CLOCK => tmp.CLK
+CLOCK => tmp~en.CLK
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6a|JK_FF:jk
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+CLOCK => TMP.CLK
+Q <= TMP.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= TMP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6a|T_FF:t
+T => tmp.OUTPUTSELECT
+T => tmp.ENA
+Clock => tmp.CLK
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6a|D_FF:d
+D => Q~reg0.DATAIN
+CLOCK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
