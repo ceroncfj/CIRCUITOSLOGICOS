@@ -1,5 +1,5 @@
 Assembler report for practica6b
-Sat Dec 03 22:04:49 2022
+Sat Dec 03 23:29:06 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Dec 03 22:04:49 2022 ;
+; Assembler Status      ; Successful - Sat Dec 03 23:29:06 2022 ;
 ; Revision Name         ; practica6b                            ;
 ; Top-level Entity Name ; practica6b                            ;
 ; Family                ; Cyclone IV E                          ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                                                              ;
 +----------------+----------------------------------------------------------------------------------------------------------------------+
 ; Device         ; EP4CE6E22C8L                                                                                                         ;
-; JTAG usercode  ; 0x00094148                                                                                                           ;
-; Checksum       ; 0x00094148                                                                                                           ;
+; JTAG usercode  ; 0x00094AAB                                                                                                           ;
+; Checksum       ; 0x00094AAB                                                                                                           ;
 +----------------+----------------------------------------------------------------------------------------------------------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 03 22:04:48 2022
+    Info: Processing started: Sat Dec 03 23:29:04 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off practica6b -c practica6b
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4590 megabytes
-    Info: Processing ended: Sat Dec 03 22:04:49 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sat Dec 03 23:29:06 2022
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

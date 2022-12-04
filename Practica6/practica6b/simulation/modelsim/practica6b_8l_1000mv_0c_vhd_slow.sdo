@@ -29,21 +29,85 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "practica6b")
-  (DATE "12/03/2022 22:04:55")
+  (DATE "12/03/2022 23:29:11")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition")
   (DIVIDER .)
   (TIMESCALE 1 ps)
 
-	// No Timing Cells with timing info are found in the compiled design. A dummy “dff” Timing Cell is created.
   (CELL
-    (CELLTYPE "dff")
-    (INSTANCE * )
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\disp\[1\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (1381:1381:1381) (1335:1335:1335))
+        (IOPATH i o (3064:3064:3064) (3059:3059:3059))
+      )
+    )
   )
-	// No Timing Cells with timing info are found in the compiled design. A dummy “dff” Timing Cell is created.
   (CELL
-    (CELLTYPE "dff")
-    (INSTANCE * )
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\disp\[2\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (859:859:859) (821:821:821))
+        (IOPATH i o (3064:3064:3064) (3059:3059:3059))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\disp\[3\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (375:375:375) (381:381:381))
+        (IOPATH i o (2962:2962:2962) (2967:2967:2967))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE \\u4\|Add0\~0\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (258:258:258) (288:288:288))
+        (IOPATH datac combout (330:330:330) (350:350:350))
+        (IOPATH datad combout (178:178:178) (153:153:153))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE \\u4\|Mux6\~0\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (262:262:262) (293:293:293))
+        (IOPATH dataa combout (438:438:438) (445:445:445))
+        (IOPATH datad combout (178:178:178) (153:153:153))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE \\u4\|Mux5\~0\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (262:262:262) (293:293:293))
+        (IOPATH dataa combout (454:454:454) (521:521:521))
+        (IOPATH datad combout (178:178:178) (153:153:153))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE \\u4\|Mux5\~1\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (258:258:258) (288:288:288))
+        (IOPATH dataa combout (494:494:494) (511:511:511))
+        (IOPATH datad combout (178:178:178) (153:153:153))
+      )
+    )
   )
 )

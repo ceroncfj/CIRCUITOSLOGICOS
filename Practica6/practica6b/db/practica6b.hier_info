@@ -1,21 +1,23 @@
 |practica6b
-CLOCK => clkdiv:divisor.clk50M
-RST => ~NO_FANOUT~
-mode => ~NO_FANOUT~
-seg[0] <= seg[0].DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= seg[1].DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= seg[2].DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= seg[3].DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= seg[4].DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= seg[5].DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= seg[6].DB_MAX_OUTPUT_PORT_TYPE
-disp[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-disp[1] <= disp[1].DB_MAX_OUTPUT_PORT_TYPE
-disp[2] <= disp[2].DB_MAX_OUTPUT_PORT_TYPE
-disp[3] <= disp[3].DB_MAX_OUTPUT_PORT_TYPE
+CLOCK => clkdiv:u1.clk50M
+CLOCK => muxbcd:u4.clk
+RST => countupdown:u2.rst
+mode => countupdown:u2.mode
+seg[0] <= decoder:u5.seg[0]
+seg[1] <= decoder:u5.seg[1]
+seg[2] <= decoder:u5.seg[2]
+seg[3] <= decoder:u5.seg[3]
+seg[4] <= decoder:u5.seg[4]
+seg[5] <= decoder:u5.seg[5]
+seg[6] <= decoder:u5.seg[6]
+seg[7] <= decoder:u5.seg[7]
+disp[0] <= muxbcd:u4.Anodos[0]
+disp[1] <= muxbcd:u4.Anodos[1]
+disp[2] <= muxbcd:u4.Anodos[2]
+disp[3] <= muxbcd:u4.Anodos[3]
 
 
-|practica6b|clkdiv:divisor
+|practica6b|clkdiv:u1
 clk50M => clkout~reg0.CLK
 clk50M => contador[0].CLK
 clk50M => contador[1].CLK
@@ -42,5 +44,138 @@ clk50M => contador[21].CLK
 clk50M => contador[22].CLK
 clk50M => contador[23].CLK
 clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6b|countupdown:u2
+pulsos => contador[0].CLK
+pulsos => contador[1].CLK
+pulsos => contador[2].CLK
+pulsos => contador[3].CLK
+pulsos => contador[4].CLK
+pulsos => contador[5].CLK
+mode => contador.OUTPUTSELECT
+mode => contador.OUTPUTSELECT
+mode => contador.OUTPUTSELECT
+mode => contador.OUTPUTSELECT
+mode => contador.OUTPUTSELECT
+mode => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+rst => contador.OUTPUTSELECT
+cuenta[0] <= contador[0].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[1] <= contador[1].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[2] <= contador[2].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[3] <= contador[3].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[4] <= contador[4].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[5] <= contador[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6b|bintobcd:u3
+Bin[0] => Uni[0].DATAIN
+Bin[1] => LessThan5.IN8
+Bin[1] => Add5.IN8
+Bin[1] => Z.DATAA
+Bin[2] => LessThan3.IN8
+Bin[2] => Add3.IN8
+Bin[2] => Z.DATAA
+Bin[3] => LessThan2.IN8
+Bin[3] => Add2.IN8
+Bin[3] => Z.DATAA
+Bin[4] => LessThan1.IN8
+Bin[4] => Add1.IN8
+Bin[4] => Z.DATAA
+Bin[5] => LessThan0.IN6
+Bin[5] => Add0.IN6
+Bin[5] => Z.DATAA
+Bin[6] => LessThan0.IN5
+Bin[6] => Add0.IN5
+Bin[6] => Z.DATAA
+Bin[7] => LessThan0.IN4
+Bin[7] => Add0.IN4
+Bin[7] => Z.DATAA
+Cen[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Cen[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Cen[2] <= <GND>
+Cen[3] <= <GND>
+Dec[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Dec[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Dec[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Dec[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Uni[0] <= Bin[0].DB_MAX_OUTPUT_PORT_TYPE
+Uni[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Uni[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Uni[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6b|muxbcd:u4
+C[0] => Mux3.IN1
+C[1] => Mux2.IN1
+C[2] => Mux1.IN1
+C[3] => Mux0.IN1
+D[0] => Mux3.IN2
+D[1] => Mux2.IN2
+D[2] => Mux1.IN2
+D[3] => Mux0.IN2
+U[0] => Mux3.IN3
+U[1] => Mux2.IN3
+U[2] => Mux1.IN3
+U[3] => Mux0.IN3
+Salidas[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Salidas[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Salidas[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Salidas[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+clk => ~NO_FANOUT~
+Anodos[0] <= <VCC>
+Anodos[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Anodos[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Anodos[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|practica6b|decoder:u5
+inx[0] => Mux0.IN19
+inx[0] => Mux1.IN19
+inx[0] => Mux2.IN19
+inx[0] => Mux3.IN19
+inx[0] => Mux4.IN19
+inx[0] => Mux5.IN19
+inx[0] => Mux6.IN19
+inx[1] => Mux0.IN18
+inx[1] => Mux1.IN18
+inx[1] => Mux2.IN18
+inx[1] => Mux3.IN18
+inx[1] => Mux4.IN18
+inx[1] => Mux5.IN18
+inx[1] => Mux6.IN18
+inx[2] => Mux0.IN17
+inx[2] => Mux1.IN17
+inx[2] => Mux2.IN17
+inx[2] => Mux3.IN17
+inx[2] => Mux4.IN17
+inx[2] => Mux5.IN17
+inx[2] => Mux6.IN17
+inx[3] => Mux0.IN16
+inx[3] => Mux1.IN16
+inx[3] => Mux2.IN16
+inx[3] => Mux3.IN16
+inx[3] => Mux4.IN16
+inx[3] => Mux5.IN16
+inx[3] => Mux6.IN16
+seg[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= <VCC>
 
 
