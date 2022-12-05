@@ -1,5 +1,5 @@
 Analysis & Synthesis report for practica5
-Fri Dec 02 19:49:45 2022
+Sun Dec 04 20:37:39 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 02 19:49:45 2022      ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 04 20:37:39 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; practica5                                  ;
 ; Top-level Entity Name              ; practica5                                  ;
@@ -149,24 +149,31 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; practica5.vhd                    ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; clkdiv.vhd                       ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/clkdiv.vhd    ;         ;
+; practica5.vhd                    ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -232,14 +239,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Dec 02 19:49:40 2022
+    Info: Processing started: Sun Dec 04 20:37:37 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off practica5 -c practica5
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 4 design units, including 2 entities, in source file practica5.vhd
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file clkdiv.vhd
+    Info (12022): Found design unit 1: clkdiv-behavior
+    Info (12023): Found entity 1: clkdiv
+Info (12021): Found 2 design units, including 1 entities, in source file practica5.vhd
     Info (12022): Found design unit 1: practica5-topLevel
-    Info (12022): Found design unit 2: clkdiv-behavior
     Info (12023): Found entity 1: practica5
-    Info (12023): Found entity 2: clkdiv
 Info (12127): Elaborating entity "practica5" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at practica5.vhd(10): used implicit default value for signal "bout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "clkdiv" for hierarchy "clkdiv:u1"
@@ -263,10 +271,10 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
 Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 8 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4721 megabytes
-    Info: Processing ended: Fri Dec 02 19:49:45 2022
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4717 megabytes
+    Info: Processing ended: Sun Dec 04 20:37:39 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

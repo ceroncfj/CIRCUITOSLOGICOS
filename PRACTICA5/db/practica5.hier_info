@@ -1,13 +1,13 @@
 |practica5
 clk50M => clkdiv:u1.clk50M
-bout[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-bout[1] <= bout[1].DB_MAX_OUTPUT_PORT_TYPE
-bout[2] <= bout[2].DB_MAX_OUTPUT_PORT_TYPE
-bout[3] <= bout[3].DB_MAX_OUTPUT_PORT_TYPE
-bout[4] <= bout[4].DB_MAX_OUTPUT_PORT_TYPE
-bout[5] <= bout[5].DB_MAX_OUTPUT_PORT_TYPE
-bout[6] <= bout[6].DB_MAX_OUTPUT_PORT_TYPE
-bout[7] <= bout[7].DB_MAX_OUTPUT_PORT_TYPE
+bout[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+bout[1] << bout[1].DB_MAX_OUTPUT_PORT_TYPE
+bout[2] << bout[2].DB_MAX_OUTPUT_PORT_TYPE
+bout[3] << bout[3].DB_MAX_OUTPUT_PORT_TYPE
+bout[4] << bout[4].DB_MAX_OUTPUT_PORT_TYPE
+bout[5] << bout[5].DB_MAX_OUTPUT_PORT_TYPE
+bout[6] << bout[6].DB_MAX_OUTPUT_PORT_TYPE
+bout[7] << bout[7].DB_MAX_OUTPUT_PORT_TYPE
 mode[0] => ~NO_FANOUT~
 mode[1] => ~NO_FANOUT~
 mode[2] => ~NO_FANOUT~

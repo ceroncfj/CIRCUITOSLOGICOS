@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "12/02/2022 19:50:15"
+-- DATE "12/04/2022 20:37:54"
 
 -- 
 -- Device: Altera EP4CGX15BF14C6 Package FBGA169
@@ -34,7 +34,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	practica5 IS
     PORT (
 	clk50M : IN std_logic;
-	bout : OUT std_logic_vector(7 DOWNTO 0);
+	bout : BUFFER std_logic_vector(7 DOWNTO 0);
 	mode : IN std_logic_vector(3 DOWNTO 0)
 	);
 END practica5;

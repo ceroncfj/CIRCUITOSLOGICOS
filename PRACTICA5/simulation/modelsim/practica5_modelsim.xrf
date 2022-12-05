@@ -1,6 +1,7 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd
-source_file = 1, C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/PRACTICA5/db/practica5.cbx.xml
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/clkdiv.vhd
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/practica5.vhd
+source_file = 1, C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/PRACTICA5/db/practica5.cbx.xml
 source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
