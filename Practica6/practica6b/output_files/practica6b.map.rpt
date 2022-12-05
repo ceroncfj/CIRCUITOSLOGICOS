@@ -1,5 +1,5 @@
 Analysis & Synthesis report for practica6b
-Sat Dec 03 23:28:57 2022
+Sun Dec 04 17:06:52 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,11 +13,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Port Connectivity Checks: "bintobcd:u3"
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "bintobcd:u3"
+ 11. Port Connectivity Checks: "clkdiv:clk2"
+ 12. Port Connectivity Checks: "clkdiv:clk1"
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
 
@@ -45,15 +45,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 03 23:28:57 2022      ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 04 17:06:52 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; practica6b                                 ;
 ; Top-level Entity Name              ; practica6b                                 ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 4                                          ;
-;     Total combinational functions  ; 4                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
+; Total logic elements               ; 130                                        ;
+;     Total combinational functions  ; 130                                        ;
+;     Dedicated logic registers      ; 58                                         ;
+; Total registers                    ; 58                                         ;
 ; Total pins                         ; 15                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -158,11 +158,12 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -180,79 +181,50 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 4                ;
-;                                             ;                  ;
-; Total combinational functions               ; 4                ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 0                ;
-;     -- 3 input functions                    ; 0                ;
-;     -- <=2 input functions                  ; 4                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 4                ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 0                ;
-;     -- Dedicated logic registers            ; 0                ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 15               ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-; Maximum fan-out node                        ; muxbcd:u4|Add0~0 ;
-; Maximum fan-out                             ; 4                ;
-; Total fan-out                               ; 22               ;
-; Average fan-out                             ; 0.65             ;
-+---------------------------------------------+------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 130         ;
+;                                             ;             ;
+; Total combinational functions               ; 130         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 55          ;
+;     -- 3 input functions                    ; 18          ;
+;     -- <=2 input functions                  ; 57          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 79          ;
+;     -- arithmetic mode                      ; 51          ;
+;                                             ;             ;
+; Total registers                             ; 58          ;
+;     -- Dedicated logic registers            ; 58          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 15          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; CLOCK~input ;
+; Maximum fan-out                             ; 50          ;
+; Total fan-out                               ; 544         ;
+; Average fan-out                             ; 2.50        ;
++---------------------------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                           ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+--------------+
-; |practica6b                ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |practica6b           ; work         ;
-;    |muxbcd:u4|             ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|muxbcd:u4 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; |practica6b                ; 130 (0)           ; 58 (0)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |practica6b                ; work         ;
+;    |bintobcd:u3|           ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|bintobcd:u3    ; work         ;
+;    |clkdiv:clk1|           ; 49 (49)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|clkdiv:clk1    ; work         ;
+;    |clkdiv:clk2|           ; 45 (45)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|clkdiv:clk2    ; work         ;
+;    |countupdown:u2|        ; 9 (9)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|countupdown:u2 ; work         ;
+;    |decoder:u5|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|decoder:u5     ; work         ;
+;    |muxbcd:u4|             ; 15 (15)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6b|muxbcd:u4      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; muxbcd:u4|Equal0~0                                     ;   ;
-; muxbcd:u4|Equal0~1                                     ;   ;
-; Number of logic cells representing combinational loops ; 2 ;
-+--------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; clkdiv:u1|clkout                       ; Stuck at GND due to stuck port data_in ;
-; countupdown:u2|contador[0..5]          ; Stuck at GND due to stuck port clock   ;
-; clkdiv:u1|contador[0..23]              ; Lost fanout                            ;
-; Total Number of Removed Registers = 31 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                        ;
-+------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Register name    ; Reason for Removal        ; Registers Removed due to This Register                                              ;
-+------------------+---------------------------+-------------------------------------------------------------------------------------+
-; clkdiv:u1|clkout ; Stuck at GND              ; countupdown:u2|contador[0], countupdown:u2|contador[1], countupdown:u2|contador[2], ;
-;                  ; due to stuck port data_in ; countupdown:u2|contador[3], countupdown:u2|contador[4], countupdown:u2|contador[5]  ;
-+------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -260,14 +232,25 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 58    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 6     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |practica6b|clkdiv:clk1|contador[3]    ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |practica6b|clkdiv:clk2|contador[7]    ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |practica6b|countupdown:u2|contador[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
 +---------------------------------------------+
@@ -277,6 +260,44 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-----------+-------+----------+--------------+
 ; bin[7..6] ; Input ; Info     ; Stuck at GND ;
 +-----------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "clkdiv:clk2"          ;
++----------------+-------+----------+--------------+
+; Port           ; Type  ; Severity ; Details      ;
++----------------+-------+----------+--------------+
+; entero[17..16] ; Input ; Info     ; Stuck at VCC ;
+; entero[11..10] ; Input ; Info     ; Stuck at VCC ;
+; entero[31..18] ; Input ; Info     ; Stuck at GND ;
+; entero[15..12] ; Input ; Info     ; Stuck at GND ;
+; entero[5..0]   ; Input ; Info     ; Stuck at GND ;
+; entero[9]      ; Input ; Info     ; Stuck at GND ;
+; entero[8]      ; Input ; Info     ; Stuck at VCC ;
+; entero[7]      ; Input ; Info     ; Stuck at GND ;
+; entero[6]      ; Input ; Info     ; Stuck at VCC ;
++----------------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "clkdiv:clk1"          ;
++----------------+-------+----------+--------------+
+; Port           ; Type  ; Severity ; Details      ;
++----------------+-------+----------+--------------+
+; entero[19..18] ; Input ; Info     ; Stuck at VCC ;
+; entero[9..8]   ; Input ; Info     ; Stuck at VCC ;
+; entero[31..23] ; Input ; Info     ; Stuck at GND ;
+; entero[21..20] ; Input ; Info     ; Stuck at GND ;
+; entero[17..15] ; Input ; Info     ; Stuck at GND ;
+; entero[13..12] ; Input ; Info     ; Stuck at GND ;
+; entero[5..0]   ; Input ; Info     ; Stuck at GND ;
+; entero[22]     ; Input ; Info     ; Stuck at VCC ;
+; entero[14]     ; Input ; Info     ; Stuck at VCC ;
+; entero[11]     ; Input ; Info     ; Stuck at VCC ;
+; entero[10]     ; Input ; Info     ; Stuck at GND ;
+; entero[7]      ; Input ; Info     ; Stuck at GND ;
+; entero[6]      ; Input ; Info     ; Stuck at VCC ;
++----------------+-------+----------+--------------+
 
 
 +-------------------------------+
@@ -294,9 +315,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 03 23:28:55 2022
+    Info: Processing started: Sun Dec 04 17:06:49 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off practica6b -c practica6b
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file jk_ff.vhd
+    Info (12022): Found design unit 1: JK_FF-behavioral
+    Info (12023): Found entity 1: JK_FF
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
     Info (12022): Found design unit 1: decoder-behavior
     Info (12023): Found entity 1: decoder
@@ -315,40 +339,29 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxbcd.
 Info (12021): Found 2 design units, including 1 entities, in source file countupdown.vhd
     Info (12022): Found design unit 1: countupdown-behavior
     Info (12023): Found entity 1: countupdown
+Info (12021): Found 2 design units, including 1 entities, in source file countupdown_ff.vhd
+    Info (12022): Found design unit 1: countupdown_FF-behavior
+    Info (12023): Found entity 1: countupdown_FF
 Info (12127): Elaborating entity "practica6b" for the top level hierarchy
-Info (12128): Elaborating entity "clkdiv" for hierarchy "clkdiv:u1"
+Info (12128): Elaborating entity "clkdiv" for hierarchy "clkdiv:clk1"
 Info (12128): Elaborating entity "countupdown" for hierarchy "countupdown:u2"
 Info (12128): Elaborating entity "bintobcd" for hierarchy "bintobcd:u3"
 Info (12128): Elaborating entity "muxbcd" for hierarchy "muxbcd:u4"
-Warning (10492): VHDL Process Statement warning at muxbcd.vhd(20): signal "Selectores" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at muxbcd.vhd(21): signal "Selectores" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "decoder" for hierarchy "decoder:u5"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seg[0]" is stuck at GND
-    Warning (13410): Pin "seg[1]" is stuck at GND
-    Warning (13410): Pin "seg[2]" is stuck at GND
-    Warning (13410): Pin "seg[3]" is stuck at GND
-    Warning (13410): Pin "seg[4]" is stuck at GND
-    Warning (13410): Pin "seg[5]" is stuck at GND
-    Warning (13410): Pin "seg[6]" is stuck at VCC
     Warning (13410): Pin "seg[7]" is stuck at VCC
-    Warning (13410): Pin "disp[0]" is stuck at VCC
+    Warning (13410): Pin "disp[3]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK"
-    Warning (15610): No output dependent on input pin "RST"
-    Warning (15610): No output dependent on input pin "mode"
-Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4663 megabytes
-    Info: Processing ended: Sat Dec 03 23:28:57 2022
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 130 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4667 megabytes
+    Info: Processing ended: Sun Dec 04 17:06:52 2022
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

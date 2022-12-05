@@ -1,0 +1,60 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity practica6c is port(
+	CLOCK,RST,mode:	IN STD_logic; -- 50MHZ
+	SEM1,SEM2:			OUT STD_LOGIC_VECTOR(2 downto 0)
+	);
+end practica6c;
+architecture toplevel of practica6c is 
+	
+	component clkdiv is port (
+		clk50M: in std_logic;
+		ENTERO: in integer;
+		clkout: out std_logic);
+	end component;
+	
+--	component countupdown_FF is port(
+--		pulsos,mode,rst: 	in std_logic;
+--		cuenta:	out std_logic_vector(5 downto 0)); 
+--	end component;
+	
+	component countupdown is port(
+		pulsos,mode,rst: 	in std_logic;
+		cuenta:	out std_logic_vector(7 downto 0)
+	);
+	end component;
+
+	signal CLK1: std_logic; --Salida de divisor de reloj 10hz
+	signal cuenta: std_LOGIC_VECTOR(7 downto 0);
+
+begin
+	reloj: 		clkdiv	port map(clk50M=> CLOCK, clkout=> CLK1, ENTERO=>50000000);
+	contador: 	countupdown port map(pulsos=>clk1,mode=>mode,rst=>rst,cuenta=>cuenta);
+	--u2: countupdown_FF port map(pulsos=>clk10,mode=>mode,rst=>rst,cuenta=>cuenta);
+	process(cuenta) begin
+		case(cuenta) is 
+			when x"00"=>SEM2<="001";SEM1<="011";
+			when x"01"=>SEM2<="001";SEM1<="011";
+			when x"02"=>SEM2<="001";SEM1<="011";
+			when x"03"=>SEM2<="001";SEM1<="011";
+			when x"04"=>SEM2<="001";SEM1<="011";
+			when x"05"=>SEM2<="001";SEM1<="011";
+			when x"06"=>SEM2<="010";SEM1<="011";
+			when x"07"=>SEM2<="010";SEM1<="011";
+			when x"08"=>SEM2<="100";SEM1<="101";
+			when x"09"=>SEM2<="100";SEM1<="101";
+			when x"0A"=>SEM2<="100";SEM1<="101";
+			when x"0B"=>SEM2<="100";SEM1<="101";
+			when x"0C"=>SEM2<="100";SEM1<="101";
+			when x"0D"=>SEM2<="100";SEM1<="101";
+			when x"0E"=>SEM2<="100";SEM1<="110";
+			when x"0F"=>SEM2<="100";SEM1<="110";
+			when others=>
+		end case;
+	end process;
+
+end toplevel;

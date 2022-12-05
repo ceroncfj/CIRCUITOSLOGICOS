@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1000mV 85C Model Setup 'CLOCK'
+Slack : -3.978
+TNS   : -74.963
+
+Type  : Slow 1000mV 85C Model Setup 'clkdiv:reloj|clkout'
+Slack : -3.131
+TNS   : -18.203
+
+Type  : Slow 1000mV 85C Model Setup 'countupdown:contador|contador[4]'
+Slack : -2.280
+TNS   : -10.376
+
+Type  : Slow 1000mV 85C Model Hold 'clkdiv:reloj|clkout'
+Slack : -2.077
+TNS   : -8.581
+
+Type  : Slow 1000mV 85C Model Hold 'CLOCK'
+Slack : -0.355
+TNS   : -0.355
+
+Type  : Slow 1000mV 85C Model Hold 'countupdown:contador|contador[4]'
+Slack : 0.957
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'CLOCK'
+Slack : -3.000
+TNS   : -54.127
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'clkdiv:reloj|clkout'
+Slack : -1.763
+TNS   : -14.104
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'countupdown:contador|contador[4]'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Setup 'CLOCK'
+Slack : -3.787
+TNS   : -71.120
+
+Type  : Slow 1000mV 0C Model Setup 'clkdiv:reloj|clkout'
+Slack : -2.929
+TNS   : -17.232
+
+Type  : Slow 1000mV 0C Model Setup 'countupdown:contador|contador[4]'
+Slack : -2.247
+TNS   : -10.170
+
+Type  : Slow 1000mV 0C Model Hold 'clkdiv:reloj|clkout'
+Slack : -1.971
+TNS   : -8.188
+
+Type  : Slow 1000mV 0C Model Hold 'CLOCK'
+Slack : -0.378
+TNS   : -0.378
+
+Type  : Slow 1000mV 0C Model Hold 'countupdown:contador|contador[4]'
+Slack : 0.979
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'CLOCK'
+Slack : -3.000
+TNS   : -54.127
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'clkdiv:reloj|clkout'
+Slack : -1.763
+TNS   : -14.104
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'countupdown:contador|contador[4]'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Setup 'CLOCK'
+Slack : -1.817
+TNS   : -29.101
+
+Type  : Fast 1000mV 0C Model Setup 'clkdiv:reloj|clkout'
+Slack : -1.356
+TNS   : -6.638
+
+Type  : Fast 1000mV 0C Model Setup 'countupdown:contador|contador[4]'
+Slack : -0.820
+TNS   : -3.568
+
+Type  : Fast 1000mV 0C Model Hold 'clkdiv:reloj|clkout'
+Slack : -1.268
+TNS   : -5.419
+
+Type  : Fast 1000mV 0C Model Hold 'CLOCK'
+Slack : -0.316
+TNS   : -0.316
+
+Type  : Fast 1000mV 0C Model Hold 'countupdown:contador|contador[4]'
+Slack : 0.489
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'CLOCK'
+Slack : -3.000
+TNS   : -54.127
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'clkdiv:reloj|clkout'
+Slack : -1.763
+TNS   : -14.104
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'countupdown:contador|contador[4]'
+Slack : 0.434
+TNS   : 0.000
+
+------------------------------------------------------------

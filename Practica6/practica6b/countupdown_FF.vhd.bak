@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity countupdown_FF is port(
+		pulsos,mode,rst: 	in std_logic;
+		cuenta:	out std_logic_vector(5 downto 0)
+);
+end countupdown_FF;
+architecture behavior of countupdown_FF is 
+	signal contador: std_logic_vector(5 downto 0):= "000000";-- con 6 bits llegamos al 64
+	component JK_FF is port(J,K,CLOCK: in std_logic; Q: out std_logic);end component;
+	signal	Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8: std_logic:= '0';
+begin
+	ff1: JK_FF port map(J=>'1', K=>'1', CLOCK=> pulsos, Q=>Q1);
+	ff2: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q1, Q=>Q2);
+	ff3: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q2, Q=>Q3);
+	ff4: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q3, Q=>Q4);
+	ff5: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q4, Q=>Q5);
+	ff6: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q5, Q=>Q6);
+	ff7: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q6, Q=>Q7);
+	ff8: JK_FF port map(J=>'1', K=>'1', CLOCK=> Q7, Q=>Q8);
+	cuenta<=Q1&Q2&Q3&Q4&Q5&Q6&Q7&Q8;
+end behavior;
