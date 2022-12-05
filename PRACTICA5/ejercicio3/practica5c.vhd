@@ -18,12 +18,10 @@ architecture topLevel of practica5c is
 	signal contador: std_logic_vector(2 downto 0):="111";
 begin
 	u1: clkdiv port map (clk50M=>clk50M, clkout=>clkinterno);
-	process(clkinterno) begin
+	process(clkinterno,clk50M) begin
 		if (start='0') then
 			if (rising_edge(clkinterno)) then 
-				if (contador =0) then
-					contador<="000";
-				else
+				if (contador > 0) then
 					contador<=contador - 1;
 				end if;
 			end if;
@@ -33,17 +31,17 @@ begin
 	
 		case (contador) is
 		when "111"=>
-			bout<= "11111";
+			bout<= "11110";-- ultimo bit diferete por que es pull up el led de la fpga
 		when "110"=>
-			bout<= "11110";
+			bout<= "11111";
 		when "101"=>
-			bout<= "11100";
+			bout<= "11101";
 		when "100"=>
-			bout<= "11000";
+			bout<= "11001";
 		when "011"=>
-			bout<= "10000";
+			bout<= "10001";
 		when others=>
-			bout<= "00000";
+			bout<= "00001";
 	end case;
 	end process;
 
@@ -65,15 +63,15 @@ entity clkdiv is port(
 end clkdiv;
 
 architecture behavior of clkdiv is
-	signal contador: std_logic_vector(23 downto 0):=x"000000"; -- los 24 bits nos permiten almacenar todos los pulsos generados en un segundo
+	signal contador: std_logic_vector(31 downto 0):=x"00000000"; -- los 24 bits nos permiten almacenar todos los pulsos generados en un segundo
 begin
 	process(clk50M) begin
 	 if (rising_edge(clk50M)) then 
 		contador<=contador + 1;
-		if (contador<2500000)then -- 2.5 MHz, en realidad no importa este valor, puesto que usamos los flancos de subida
+		if (contador<25000000)then -- 2.5 MHz, en realidad no importa este valor, puesto que usamos los flancos de subida
 			clkout<= '1';
 		elsif(contador=50000000) then-- 50MHz en hexadecimal para el divisor el periodo es de 1s
-			contador<= x"000000"; -- reset a contador
+			contador<= x"00000000"; -- reset a contador
 		else
 			clkout<= '0';
 		end if;

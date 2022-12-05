@@ -1,5 +1,5 @@
 Flow report for practica5c
-Fri Dec 02 20:14:46 2022
+Sun Dec 04 23:50:23 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 02 20:14:46 2022      ;
+; Flow Status                        ; Successful - Sun Dec 04 23:50:23 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; practica5c                                 ;
 ; Top-level Entity Name              ; practica5c                                 ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 59 / 6,272 ( < 1 % )                       ;
-;     Total combinational functions  ; 58 / 6,272 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 28 / 6,272 ( < 1 % )                       ;
-; Total registers                    ; 28                                         ;
+; Device                             ; EP4CE6E22C8L                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 71 / 6,272 ( 1 % )                         ;
+;     Total combinational functions  ; 71 / 6,272 ( 1 % )                         ;
+;     Dedicated logic registers      ; 36 / 6,272 ( < 1 % )                       ;
+; Total registers                    ; 36                                         ;
 ; Total pins                         ; 7 / 92 ( 8 % )                             ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 2 ( 0 % )                              ;
-; Device                             ; EP4CE6E22C6                                ;
-; Timing Models                      ; Final                                      ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -64,25 +64,27 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/02/2022 20:14:13 ;
+; Start date & time ; 12/04/2022 23:50:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; practica5c          ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                     ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 167300353520715.167003365201588 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                    ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 53350635110454.167021940625424 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --             ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -90,12 +92,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4657 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:12     ; 1.0                     ; 4970 MB             ; 00:00:13                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4566 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 4638 MB             ; 00:00:05                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4531 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4659 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 5343 MB             ; 00:00:06                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4582 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4664 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4547 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:12                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -104,11 +106,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-4BMI07R  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-4BMI07R  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-4BMI07R  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-4BMI07R  ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-4BMI07R  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-TFG79H2  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-TFG79H2  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-TFG79H2  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-TFG79H2  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-TFG79H2  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

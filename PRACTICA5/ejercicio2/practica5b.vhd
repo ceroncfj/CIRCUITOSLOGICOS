@@ -6,7 +6,7 @@ use ieee.std_logic_arith.all;
 
 entity practica5b is port(
 	clk50M: in std_logic;
-	rout,gout,bout: out std_logic_vector(2 downto 0);
+	rout,gout,bout: out std_logic;
 	rin,gin, bin: 	in std_logic_vector(2 downto 0)
 );
 end practica5b;
@@ -14,49 +14,44 @@ end practica5b;
 architecture topLevel of practica5b is
 	component clkdiv is port(clk50M: in std_logic;clkout: out std_logic;wcycle: in integer); end component;
 	signal clkinterno: std_logic;
-	signal contador: std_logic_vector(7 downto 0):=x"00";
 	signal wcycle_r,wcycle_g,wcycle_b: integer;
 begin
-	r: 	clkdiv port map (clk50M=>clk50M, clkout=>clkinterno, wcycle=>wcycle_r);
-	g: 	clkdiv port map (clk50M=>clk50M, clkout=>clkinterno, wcycle=>wcycle_g);
-	b: 	clkdiv port map (clk50M=>clk50M, clkout=>clkinterno, wcycle=>wcycle_b);
-	process(clkinterno, rin) begin --red 
-			case(rin) is 
+	r: 	clkdiv port map (clk50M=>clk50M, clkout=>rout, wcycle=>wcycle_r);
+	g: 	clkdiv port map (clk50M=>clk50M, clkout=>gout, wcycle=>wcycle_g);
+	b: 	clkdiv port map (clk50M=>clk50M, clkout=>bout, wcycle=>wcycle_b);
+	process(rin,gin,bin) begin
+			case(rin) is --RED
 				when "000"=> wcycle_r<= 0;
 				when "001"=> wcycle_r<= 125000;
 				when "010"=> wcycle_r<= 187500;
-				when "011"=> wcycle_r<= 25000000;
-				when "100"=> wcycle_r<= 31250000;
-				when "101"=> wcycle_r<= 35250000;
-				when "110"=> wcycle_r<= 43750000;
+				when "011"=> wcycle_r<= 250000;
+				when "100"=> wcycle_r<= 312500;
+				when "101"=> wcycle_r<= 352500;
+				when "110"=> wcycle_r<= 437500;
 				when others=> wcycle_r<= 500000;
 			end case;
-	end process;
-	process(clkinterno, gin) begin --green
-			case(gin) is 
+			case(gin) is --GREEN
 				when "000"=> wcycle_g<= 0;
 				when "001"=> wcycle_g<= 125000;
 				when "010"=> wcycle_g<= 187500;
-				when "011"=> wcycle_g<= 25000000;
-				when "100"=> wcycle_g<= 31250000;
-				when "101"=> wcycle_g<= 35250000;
-				when "110"=> wcycle_g<= 43750000;
+				when "011"=> wcycle_g<= 250000;
+				when "100"=> wcycle_g<= 312500;
+				when "101"=> wcycle_g<= 352500;
+				when "110"=> wcycle_g<= 437500;
 				when others=> wcycle_g<= 500000;
 			end case;
-	end process;
-	process(clkinterno, bin) begin --blue
-	
-			case(bin) is 
+			case(bin) is ---BLUE
 				when "000"=> wcycle_b<= 0;
 				when "001"=> wcycle_b<= 125000;
 				when "010"=> wcycle_b<= 187500;
-				when "011"=> wcycle_b<= 25000000;
-				when "100"=> wcycle_b<= 31250000;
-				when "101"=> wcycle_b<= 35250000;
-				when "110"=> wcycle_b<= 43750000;
+				when "011"=> wcycle_b<= 250000;
+				when "100"=> wcycle_b<= 312500;
+				when "101"=> wcycle_b<= 352500;
+				when "110"=> wcycle_b<= 437500;
 				when others=> wcycle_b<= 500000;
 			end case;
 	end process;
+
 end topLevel;
 
 
