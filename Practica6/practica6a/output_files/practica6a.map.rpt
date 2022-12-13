@@ -1,5 +1,5 @@
 Analysis & Synthesis report for practica6a
-Sat Dec 03 20:21:20 2022
+Tue Dec 06 14:10:58 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,12 +13,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Port Connectivity Checks: "JK_FF:jk"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "JK_FF:jk"
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,23 +43,19 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 03 20:21:20 2022      ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 06 14:10:58 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; practica6a                                 ;
 ; Top-level Entity Name              ; practica6a                                 ;
-; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 0                                          ;
-;     Total combinational functions  ; 0                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 72                                         ;
+;     Total combinational functions  ; 71                                         ;
+;     Dedicated logic registers      ; 38                                         ;
+; Total registers                    ; 38                                         ;
 ; Total pins                         ; 7                                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total GXB Receiver Channel PCS     ; 0                                          ;
-; Total GXB Receiver Channel PMA     ; 0                                          ;
-; Total GXB Transmitter Channel PCS  ; 0                                          ;
-; Total GXB Transmitter Channel PMA  ; 0                                          ;
 ; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
@@ -70,8 +65,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8L       ;                    ;
 ; Top-level entity name                                                      ; practica6a         ; practica6a         ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -151,85 +147,74 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                   ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
-; practica6a.vhd                   ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/practica6a.vhd ;         ;
-; SR_FF.vhd                        ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/SR_FF.vhd      ;         ;
-; JK_FF.vhd                        ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/JK_FF.vhd      ;         ;
-; T_FF.vhd                         ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/T_FF.vhd       ;         ;
-; D_FF.vhd                         ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/D_FF.vhd       ;         ;
-; clkdiv.vhd                       ; yes             ; User VHDL File  ; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/clkdiv.vhd     ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; practica6a.vhd                   ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/practica6a.vhd ;         ;
+; SR_FF.vhd                        ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/SR_FF.vhd      ;         ;
+; JK_FF.vhd                        ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/JK_FF.vhd      ;         ;
+; T_FF.vhd                         ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/T_FF.vhd       ;         ;
+; D_FF.vhd                         ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/D_FF.vhd       ;         ;
+; clkdiv.vhd                       ; yes             ; User VHDL File  ; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/clkdiv.vhd     ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 7                ;
-; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; Q[0]~output      ;
-; Maximum fan-out          ; 1                ;
-; Total fan-out            ; 7                ;
-; Average fan-out          ; 0.50             ;
-+--------------------------+------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 72          ;
+;                                             ;             ;
+; Total combinational functions               ; 71          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 29          ;
+;     -- 3 input functions                    ; 6           ;
+;     -- <=2 input functions                  ; 36          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 40          ;
+;     -- arithmetic mode                      ; 31          ;
+;                                             ;             ;
+; Total registers                             ; 38          ;
+;     -- Dedicated logic registers            ; 38          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 7           ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; CLOCK~input ;
+; Maximum fan-out                             ; 33          ;
+; Total fan-out                               ; 296         ;
+; Average fan-out                             ; 2.41        ;
++---------------------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |practica6a                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 7    ; 0            ; |practica6a         ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                            ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+; |practica6a                ; 71 (0)            ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |practica6a            ; work         ;
+;    |D_FF:d|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6a|D_FF:d     ; work         ;
+;    |JK_FF:jk|              ; 4 (4)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6a|JK_FF:jk   ; work         ;
+;    |SR_FF:sr|              ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6a|SR_FF:sr   ; work         ;
+;    |T_FF:t|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6a|T_FF:t     ; work         ;
+;    |clkdiv:clk|            ; 66 (66)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |practica6a|clkdiv:clk ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; clkdiv:clk|clkout                      ; Stuck at GND due to stuck port data_in ;
-; D_FF:d|Q                               ; Stuck at GND due to stuck port clock   ;
-; T_FF:t|tmp                             ; Stuck at GND due to stuck port clock   ;
-; JK_FF:jk|TMP                           ; Stuck at GND due to stuck port clock   ;
-; SR_FF:sr|tmp                           ; Stuck at GND due to stuck port clock   ;
-; SR_FF:sr|tmp~en                        ; Stuck at GND due to stuck port clock   ;
-; clkdiv:clk|contador[0..23]             ; Lost fanout                            ;
-; Total Number of Removed Registers = 30 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                       ;
-+-------------------+---------------------------+-------------------------------------------------------------------+
-; Register name     ; Reason for Removal        ; Registers Removed due to This Register                            ;
-+-------------------+---------------------------+-------------------------------------------------------------------+
-; clkdiv:clk|clkout ; Stuck at GND              ; D_FF:d|Q, T_FF:t|tmp, JK_FF:jk|TMP, SR_FF:sr|tmp, SR_FF:sr|tmp~en ;
-;                   ; due to stuck port data_in ;                                                                   ;
-+-------------------+---------------------------+-------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -237,14 +222,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 38    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |practica6a|clkdiv:clk|contador[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -261,7 +255,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -271,9 +265,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 03 20:21:18 2022
+    Info: Processing started: Tue Dec 06 14:10:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off practica6a -c practica6a
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file practica6a.vhd
     Info (12022): Found design unit 1: practica6a-toplevel
     Info (12023): Found entity 1: practica6a
@@ -299,24 +293,17 @@ Info (12128): Elaborating entity "JK_FF" for hierarchy "JK_FF:jk"
 Info (12128): Elaborating entity "T_FF" for hierarchy "T_FF:t"
 Info (12128): Elaborating entity "D_FF" for hierarchy "D_FF:d"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Q[1]" is stuck at GND
-    Warning (13410): Pin "Q[2]" is stuck at GND
-    Warning (13410): Pin "Q[3]" is stuck at GND
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK"
-    Warning (15610): No output dependent on input pin "A"
-    Warning (15610): No output dependent on input pin "B"
-Info (21057): Implemented 7 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 4 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4717 megabytes
-    Info: Processing ended: Sat Dec 03 20:21:20 2022
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21061): Implemented 72 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Tue Dec 06 14:10:58 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

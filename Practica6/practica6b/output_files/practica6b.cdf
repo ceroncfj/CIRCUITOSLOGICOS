@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6b/output_files/") File("practica6b.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6b/output_files/") File("practica6b.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

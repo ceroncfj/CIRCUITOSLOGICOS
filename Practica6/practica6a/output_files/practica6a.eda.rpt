@@ -1,5 +1,5 @@
 EDA Netlist Writer report for practica6a
-Sat Dec 03 20:21:36 2022
+Tue Dec 06 14:11:28 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,10 +36,10 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Dec 03 20:21:36 2022 ;
+; EDA Netlist Writer Status ; Successful - Tue Dec 06 14:11:27 2022 ;
 ; Revision Name             ; practica6a                            ;
 ; Top-level Entity Name     ; practica6a                            ;
-; Family                    ; Cyclone IV GX                         ;
+; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
@@ -66,20 +66,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                           ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_6_1200mv_85c_slow.vho      ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_6_1200mv_0c_slow.vho       ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_min_1200mv_0c_fast.vho     ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a.vho                        ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_6_1200mv_85c_vhd_slow.sdo  ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_6_1200mv_0c_vhd_slow.sdo   ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_min_1200mv_0c_vhd_fast.sdo ;
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_vhd.sdo                    ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                       ;
++----------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_8l_1000mv_85c_slow.vho     ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_8l_1000mv_0c_slow.vho      ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_min_1000mv_0c_fast.vho     ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a.vho                        ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_8l_1000mv_85c_vhd_slow.sdo ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_8l_1000mv_0c_vhd_slow.sdo  ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_min_1000mv_0c_vhd_fast.sdo ;
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/practica6a_vhd.sdo                    ;
++----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,20 +88,20 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 03 20:21:35 2022
+    Info: Processing started: Tue Dec 06 14:11:26 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off practica6a -c practica6a
-Info (204019): Generated file practica6a_6_1200mv_85c_slow.vho in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a_6_1200mv_0c_slow.vho in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a_min_1200mv_0c_fast.vho in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a.vho in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a_6_1200mv_85c_vhd_slow.sdo in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a_6_1200mv_0c_vhd_slow.sdo in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file practica6a_vhd.sdo in folder "C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_8l_1000mv_85c_slow.vho in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_8l_1000mv_0c_slow.vho in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_min_1000mv_0c_fast.vho in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a.vho in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_8l_1000mv_85c_vhd_slow.sdo in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_8l_1000mv_0c_vhd_slow.sdo in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_min_1000mv_0c_vhd_fast.sdo in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file practica6a_vhd.sdo in folder "C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4609 megabytes
-    Info: Processing ended: Sat Dec 03 20:21:36 2022
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4548 megabytes
+    Info: Processing ended: Tue Dec 06 14:11:28 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

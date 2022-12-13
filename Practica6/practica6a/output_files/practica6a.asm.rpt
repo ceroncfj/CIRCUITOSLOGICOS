@@ -1,5 +1,5 @@
 Assembler report for practica6a
-Sat Dec 03 20:21:30 2022
+Tue Dec 06 14:11:17 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/output_files/practica6a.sof
+  5. Assembler Device Options: C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/output_files/practica6a.sof
   6. Assembler Messages
 
 
@@ -37,11 +37,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Dec 03 20:21:30 2022 ;
+; Assembler Status      ; Successful - Tue Dec 06 14:11:17 2022 ;
 ; Revision Name         ; practica6a                            ;
 ; Top-level Entity Name ; practica6a                            ;
-; Family                ; Cyclone IV GX                         ;
-; Device                ; EP4CGX15BF14C6                        ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE6E22C8L                          ;
 +-----------------------+---------------------------------------+
 
 
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                   ;
-+-------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                   ;
-+-------------------------------------------------------------------------------------------------------------+
-; C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/output_files/practica6a.sof ;
-+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                          ;
++----------------------------------------------------------------------------------------------------+
+; File Name                                                                                          ;
++----------------------------------------------------------------------------------------------------+
+; C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/output_files/practica6a.sof ;
++----------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ceron/OneDrive/Documentos/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/output_files/practica6a.sof ;
-+----------------+----------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                              ;
-+----------------+----------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP4CGX15BF14C6                                                                                                       ;
-; JTAG usercode  ; 0x000BB609                                                                                                           ;
-; Checksum       ; 0x000BB609                                                                                                           ;
-+----------------+----------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/sergio/Documents/GitHub/CIRCUITOSLOGICOS/Practica6/practica6a/output_files/practica6a.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                     ;
++----------------+-------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CE6E22C8L                                                                                                ;
+; JTAG usercode  ; 0x0009DAB0                                                                                                  ;
+; Checksum       ; 0x0009DAB0                                                                                                  ;
++----------------+-------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 03 20:21:28 2022
+    Info: Processing started: Tue Dec 06 14:11:15 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off practica6a -c practica6a
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4649 megabytes
-    Info: Processing ended: Sat Dec 03 20:21:30 2022
+    Info: Peak virtual memory: 4566 megabytes
+    Info: Processing ended: Tue Dec 06 14:11:17 2022
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
